@@ -309,7 +309,14 @@ with row1_col1:
             labels={'Outstanding_Amount': 'Outstanding (₹)', 'Ageing_Bucket': 'Bucket'},
             text_auto='.2s'
         )
-        fig_age.update_layout(margin=dict(l=10, r=10, t=30, b=10))
+        fig_age.update_layout(
+            margin=dict(l=10, r=10, t=30, b=10),
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            font=dict(color='black'),
+            xaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black')),
+            yaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black'))
+        )
         st.plotly_chart(fig_age, use_container_width=True)
     else:
         st.info("No data for selected filters.")
@@ -328,7 +335,14 @@ with row1_col2:
             markers=True,
             labels={'Outstanding_Amount': 'Outstanding (₹)', 'YearMonth': 'Month'}
         )
-        fig_trend.update_layout(margin=dict(l=10, r=10, t=30, b=10))
+        fig_trend.update_layout(
+            margin=dict(l=10, r=10, t=30, b=10),
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            font=dict(color='black'),
+            xaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black')),
+            yaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black'))
+        )
         st.plotly_chart(fig_trend, use_container_width=True)
     else:
         st.info("No data for selected filters.")
@@ -352,7 +366,13 @@ with row2_col1:
             values='Outstanding_Amount',
             hole=0.4
         )
-        fig_region.update_layout(margin=dict(l=10, r=10, t=30, b=10))
+        fig_region.update_layout(
+            margin=dict(l=10, r=10, t=30, b=10),
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            font=dict(color='black'),
+            legend=dict(font=dict(color='black'))
+        )
         st.plotly_chart(fig_region, use_container_width=True)
     else:
         st.info("No data for selected filters.")
@@ -370,7 +390,12 @@ with row2_col2:
             path=['RSM', 'ASM', 'Sales_Person'],
             values='Outstanding_Amount'
         )
-        fig_hier.update_layout(margin=dict(l=10, r=10, t=30, b=10))
+        fig_hier.update_layout(
+            margin=dict(l=10, r=10, t=30, b=10),
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            font=dict(color='black')
+        )
         st.plotly_chart(fig_hier, use_container_width=True)
     else:
         st.info("No data for selected filters.")
@@ -436,7 +461,14 @@ with row3_col2:
             labels={'Outstanding_Amount': 'Outstanding (₹)', 'Name_of_the_dealer': 'Dealer'},
             text_auto='.2s'
         )
-        fig_top.update_layout(margin=dict(l=10, r=10, t=30, b=10), yaxis={'categoryorder': 'total ascending'})
+        fig_top.update_layout(
+            margin=dict(l=10, r=10, t=30, b=10),
+            plot_bgcolor='white',
+            paper_bgcolor='white',
+            font=dict(color='black'),
+            xaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black')),
+            yaxis=dict(categoryorder='total ascending', gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black'))
+        )
         st.plotly_chart(fig_top, use_container_width=True)
     else:
         st.info("No data for selected filters.")
@@ -511,7 +543,12 @@ with row4_col1:
                     yaxis_title=analysis_level,
                     height=400,
                     margin=dict(l=10, r=10, t=30, b=10),
-                    hovermode='closest'
+                    hovermode='closest',
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(color='black'),
+                    xaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black')),
+                    yaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black'))
                 )
                 st.plotly_chart(fig_zscore, use_container_width=True)
             else:
@@ -566,7 +603,12 @@ with row4_col2:
             fig_scatter.update_layout(
                 height=400,
                 margin=dict(l=10, r=10, t=30, b=10),
-                showlegend=False
+                showlegend=False,
+                plot_bgcolor='white',
+                paper_bgcolor='white',
+                font=dict(color='black'),
+                xaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black')),
+                yaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black'))
             )
             st.plotly_chart(fig_scatter, use_container_width=True)
         else:
@@ -641,7 +683,12 @@ with row5_col1:
                 fig_ageing.update_layout(
                     height=400,
                     margin=dict(l=10, r=10, t=30, b=10),
-                    legend=dict(title='Days Overdue')
+                    legend=dict(title='Days Overdue', font=dict(color='black'), title_font=dict(color='black')),
+                    plot_bgcolor='white',
+                    paper_bgcolor='white',
+                    font=dict(color='black'),
+                    xaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black')),
+                    yaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black'))
                 )
                 st.plotly_chart(fig_ageing, use_container_width=True)
             else:
@@ -715,7 +762,12 @@ with row5_col2:
                 height=400,
                 margin=dict(l=10, r=10, t=30, b=10),
                 hovermode='x unified',
-                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1)
+                legend=dict(orientation="h", yanchor="bottom", y=1.02, xanchor="right", x=1, font=dict(color='black')),
+                plot_bgcolor='white',
+                paper_bgcolor='white',
+                font=dict(color='black'),
+                xaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black')),
+                yaxis=dict(gridcolor='lightgray', title_font=dict(color='black'), tickfont=dict(color='black'))
             )
             fig_trend.update_xaxes(tickangle=45)
             st.plotly_chart(fig_trend, use_container_width=True)
